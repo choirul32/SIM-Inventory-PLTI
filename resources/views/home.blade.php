@@ -5,10 +5,10 @@
 
 @section('content')
 <!-- Small boxes (Stat box) -->
-<div class="row">
+<div class="row" style="color: white">
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\User::count() }}</h3>
 
@@ -23,7 +23,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-green">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Category::count() }}<sup style="font-size: 20px"></sup></h3>
 
@@ -38,7 +38,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-yellow">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Product::count() }}</h3>
                 <p>Product</p>
@@ -52,10 +52,9 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-red">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Customer::count() }}</h3>
-
                 <p>Customer</p>
             </div>
             <div class="icon">
@@ -69,10 +68,10 @@
 
 
 
-<div class="row">
-    <div class="col-lg-3 col-xs-6">
+<div class="row" style="color: white">
+    <div class="col-lg-3 col-xs-6" >
         <!-- small box -->
-        <div class="small-box bg-navy">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Sale::count() }}</h3>
 
@@ -87,7 +86,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-teal">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Supplier::count() }}<sup style="font-size: 20px"></sup></h3>
 
@@ -102,7 +101,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-maroon">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Product_Masuk::count() }}</h3>
 
@@ -117,7 +116,7 @@
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-gray">
+        <div class="small-box bg-black-custom">
             <div class="inner">
                 <h3>{{ \App\Product_Keluar::count()  }}</h3>
 

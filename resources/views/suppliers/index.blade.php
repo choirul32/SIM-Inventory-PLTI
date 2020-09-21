@@ -14,7 +14,7 @@
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Add Customers</a>
+            <a onclick="addForm()" class="btn btn-primary" >Add Suppliers</a>
             <a href="{{ route('exportPDF.suppliersAll') }}" class="btn btn-danger">Export PDF</a>
             <a href="{{ route('exportExcel.suppliersAll') }}" class="btn btn-success">Export Excel</a>
         </div>
@@ -22,7 +22,7 @@
 
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="sales-table" class="table table-striped">
+            <table id="sales-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>

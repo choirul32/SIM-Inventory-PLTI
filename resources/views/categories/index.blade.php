@@ -19,10 +19,9 @@
             <a href="{{ route('exportExcel.categoriesAll') }}" class="btn btn-success">Export Excel</a>
         </div>
 
-
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="categories-table" class="table table-striped">
+            <table id="categories-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>

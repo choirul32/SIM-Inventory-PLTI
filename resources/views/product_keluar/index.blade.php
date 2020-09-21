@@ -26,7 +26,7 @@
 
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="products-out-table" class="table table-striped">
+            <table id="products-out-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>

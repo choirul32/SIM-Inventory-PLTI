@@ -20,6 +20,7 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css')}} ">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
@@ -36,13 +37,7 @@
     <!-- Main Header -->
     <header class="main-header">
 
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Informasi</b>Inventory</span>
-        </a>
+        
 
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -116,13 +111,8 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Anything you want
-        </div>
-        <!-- Default to the left -->
-        <?php $date = date('Y')?>
-        <strong>Copyright &copy; {{$date}} <a href="#">Choirul Anwar</a>.</strong> All rights reserved.
+        
+         
     </footer>
 
     <!-- Control Sidebar -->

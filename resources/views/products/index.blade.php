@@ -11,14 +11,19 @@
 
         <div class="box-header">
             <h3 class="box-title">Data Products</h3>
-
-            <a onclick="addForm()" class="btn btn-primary pull-right" style="margin-top: -8px;">Add Products</a>
         </div>
+
+        <div class="box-header">
+            <a onclick="addForm()" class="btn btn-primary">Add Products</a>
+            
+        </div>
+
+        
 
 
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="products-table" class="table table-striped">
+            <table id="products-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
