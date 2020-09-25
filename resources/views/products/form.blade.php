@@ -17,38 +17,43 @@
 
                     <div class="box-body">
                         <div class="form-group">
-                            <label >Name</label>
-                            <input type="text" class="form-control" id="nama" name="nama"  autofocus required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label >Price</label>
-                            <input type="text" class="form-control" id="harga" name="harga"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label >Quantity</label>
-                            <input type="text" class="form-control" id="qty" name="qty"   required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label >Image</label>
-                            <input type="file" class="form-control" id="image" name="image" >
-                            <span class="help-block with-errors"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label >Category</label>
+                            <label >Kategori Barang</label>
                             {!! Form::select('category_id', $category, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
                             <span class="help-block with-errors"></span>
                         </div>
 
+                        <div class="form-group">
+                            <label >Jumlah</label>
+                            <input type="number" class="form-control" id="qty" name="qty"   required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Nama Pengadaan</label>
+                            <input type="text" class="form-control" id="nama_pengadaan" name="nama_pengadaan"   required>
+                            <span class="help-block with-errors"></span>
+                        </div>
 
 
+                        <div class="form-group">
+                            <label >Jenis Aset</label>
+                            <input type="text" class="form-control" id="jenis_aset" name="jenis_aset"   required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Pejabat Penerima Hasil Pekerjaan(PPHP)</label>
+                            <input type="text" class="form-control" id="penerima" name="penerima"   required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label >Spesifikasi</label>
+                            <input type="text" class="form-control" id="spesifikasi" name="spesifikasi"   required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+
+                        
 
                     </div>
                     <!-- /.box-body -->

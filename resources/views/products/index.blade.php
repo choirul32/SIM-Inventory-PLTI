@@ -27,11 +27,13 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>QTY</th>
-                    <th>Image</th>
-                    <th>Category</th>
+                    <th>Tanggal</th>
+                    <th>Kategori Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Nama Pengadaan</th>
+                    <th>Jenis Aset</th>
+                    <th>Pejabat Penerima Hasil Pekerjaan</th>
+                    <th>Spesifikasi</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -54,20 +56,6 @@
     {{-- Validator --}}
     <script src="{{ asset('assets/validator/validator.min.js') }}"></script>
 
-    {{--<script>--}}
-    {{--$(function () {--}}
-    {{--$('#items-table').DataTable()--}}
-    {{--$('#example2').DataTable({--}}
-    {{--'paging'      : true,--}}
-    {{--'lengthChange': false,--}}
-    {{--'searching'   : false,--}}
-    {{--'ordering'    : true,--}}
-    {{--'info'        : true,--}}
-    {{--'autoWidth'   : false--}}
-    {{--})--}}
-    {{--})--}}
-    {{--</script>--}}
-
     <script type="text/javascript">
         var table = $('#products-table').DataTable({
             processing: true,
@@ -75,12 +63,14 @@
             ajax: "{{ route('api.products') }}",
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'nama', name: 'nama'},
-                {data: 'harga', name: 'harga'},
-                {data: 'qty', name: 'qty'},
-                {data: 'show_photo', name: 'show_photo'},
+                {data: 'created_at', name: 'created_at'},
                 {data: 'category_name', name: 'category_name'},
+                {data: 'qty', name: 'qty'},
+                {data: 'nama_pengadaan', name: 'nama_pengadaan'},
+                {data: 'jenis_aset', name: 'jenis_aset'},
+                {data: 'penerima', name: 'penerima'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
+                
             ]
         });
 

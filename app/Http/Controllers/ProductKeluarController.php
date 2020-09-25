@@ -25,9 +25,9 @@ class ProductKeluarController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('nama','ASC')
+        $products = Product::orderBy('spesifikasi','ASC')
             ->get()
-            ->pluck('nama','id');
+            ->pluck('spesifikasi','id');
 
         $customers = Customer::orderBy('nama','ASC')
             ->get()
@@ -57,7 +57,7 @@ class ProductKeluarController extends Controller
     {
         $this->validate($request, [
            'product_id'     => 'required',
-           'customer_id'    => 'required',
+           'lokasi'    => 'required',
            'qty'            => 'required',
            'tanggal'           => 'required'
         ]);
@@ -109,7 +109,7 @@ class ProductKeluarController extends Controller
     {
         $this->validate($request, [
             'product_id'     => 'required',
-            'customer_id'    => 'required',
+            'lokasi'    => 'required',
             'qty'            => 'required',
             'tanggal'           => 'required'
         ]);
@@ -149,12 +149,10 @@ class ProductKeluarController extends Controller
         $product = Product_Keluar::all();
 
         return Datatables::of($product)
-            ->addColumn('products_name', function ($product){
-                return $product->product->nama;
+            ->addColumn('spesifikasi', function ($product){
+                return $product->product->spesifikasi;
             })
-            ->addColumn('customer_name', function ($product){
-                return $product->customer->nama;
-            })
+            
             ->addColumn('action', function($product){
                 return '<a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Show</a> ' .
                     '<a onclick="editForm('. $product->id .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .

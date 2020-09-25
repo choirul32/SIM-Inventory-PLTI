@@ -4,7 +4,6 @@
 @section('top')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
-
     <!-- daterange picker -->
     <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
     <!-- bootstrap datepicker -->
@@ -31,7 +30,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Products</th>
-                    <th>Customer</th>
+                    <th>Lokasi</th>
                     <th>QTY</th>
                     <th>Tanggal Pembelian</th>
                     <th></th>
@@ -51,12 +50,6 @@
             <h3 class="box-title">Export Invoice</h3>
         </div>
 
-        {{--<div class="box-header">--}}
-            {{--<a onclick="addForm()" class="btn btn-primary" >Add Products Out</a>--}}
-            {{--<a href="{{ route('exportPDF.productKeluarAll') }}" class="btn btn-danger">Export PDF</a>--}}
-            {{--<a href="{{ route('exportExcel.productKeluarAll') }}" class="btn btn-success">Export Excel</a>--}}
-        {{--</div>--}}
-
         <!-- /.box-header -->
         <div class="box-body">
             <table id="invoice" class="table table-striped">
@@ -64,14 +57,14 @@
                 <tr>
                     <th>ID</th>
                     <th>Products</th>
-                    <th>Customer</th>
+                    <th>Lokasi</th>
                     <th>QTY</th>
                     <th>Tanggal Pembelian</th>
                     <th>Export Invoice</th>
                 </tr>
                 </thead>
 
-                @foreach($invoice_data as $i)
+                {{-- @foreach($invoice_data as $i)
                     <tbody>
                         <td>{{ $i->id }}</td>
                         <td>{{ $i->product->nama }}</td>
@@ -82,7 +75,7 @@
                             <a href="{{ route('exportPDF.productKeluar', [ 'id' => $i->id ]) }}" class="btn btn-sm btn-danger">Export PDF</a>
                         </td>
                     </tbody>
-                @endforeach
+                @endforeach --}}
             </table>
         </div>
         <!-- /.box-body -->
@@ -159,8 +152,8 @@
             ajax: "{{ route('api.productsOut') }}",
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'products_name', name: 'products_name'},
-                {data: 'customer_name', name: 'customer_name'},
+                {data: 'spesifikasi', name: 'spesifikasi'},
+                {data: 'lokasi', name: 'lokasi'},
                 {data: 'qty', name: 'qty'},
                 {data: 'tanggal', name: 'tanggal'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}

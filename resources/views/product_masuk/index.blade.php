@@ -54,12 +54,6 @@
             <h3 class="box-title">Export Invoice</h3>
         </div>
 
-    {{--<div class="box-header">--}}
-    {{--<a onclick="addForm()" class="btn btn-primary" >Add Products Out</a>--}}
-    {{--<a href="{{ route('exportPDF.productKeluarAll') }}" class="btn btn-danger">Export PDF</a>--}}
-    {{--<a href="{{ route('exportExcel.productKeluarAll') }}" class="btn btn-success">Export Excel</a>--}}
-    {{--</div>--}}
-
     <!-- /.box-header -->
         <div class="box-body">
             <table id="invoice" class="table table-striped">
@@ -118,19 +112,6 @@
     {{-- Validator --}}
     <script src="{{ asset('assets/validator/validator.min.js') }}"></script>
 
-    {{--<script>--}}
-    {{--$(function () {--}}
-    {{--$('#items-table').DataTable()--}}
-    {{--$('#example2').DataTable({--}}
-    {{--'paging'      : true,--}}
-    {{--'lengthChange': false,--}}
-    {{--'searching'   : false,--}}
-    {{--'ordering'    : true,--}}
-    {{--'info'        : true,--}}
-    {{--'autoWidth'   : false--}}
-    {{--})--}}
-    {{--})--}}
-    {{--</script>--}}
 
     <script>
         $(function () {
@@ -160,7 +141,7 @@
             ajax: "{{ route('api.productsIn') }}",
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'products_name', name: 'products_name'},
+                {data: 'spesifikasi', name: 'spesifikasi'},
                 {data: 'supplier_name', name: 'supplier_name'},
                 {data: 'qty', name: 'qty'},
                 {data: 'tanggal', name: 'tanggal'},

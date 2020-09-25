@@ -51,22 +51,14 @@ class ProductController extends Controller
             ->pluck('name','id');
 
         $this->validate($request , [
-            'nama'          => 'required|string',
-            'harga'         => 'required',
-            'qty'           => 'required',
-            'image'         => 'required',
+            'nama_pengadaan'          => 'required|string',
+            'jenis_aset'         => 'required',
+            'spesifikasi'           => 'required',
+            'penerima'         => 'required',
             'category_id'   => 'required',
         ]);
 
-        $input = $request->all();
-        $input['image'] = null;
-
-        if ($request->hasFile('image')){
-            $input['image'] = '/upload/products/'.str_slug($input['nama'], '-').'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/upload/products/'), $input['image']);
-        }
-
-        Product::create($input);
+        Product::create($request->all());
 
         return response()->json([
             'success' => true,
@@ -172,18 +164,12 @@ class ProductController extends Controller
             ->addColumn('category_name', function ($product){
                 return $product->category->name;
             })
-            ->addColumn('show_photo', function($product){
-                if ($product->image == NULL){
-                    return 'No Image';
-                }
-                return '<img class="rounded-square" width="50" height="50" src="'. url($product->image) .'" alt="">';
-            })
             ->addColumn('action', function($product){
                 return '<a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Show</a> ' .
                     '<a onclick="editForm('. $product->id .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
                     '<a onclick="deleteData('. $product->id .')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
             })
-            ->rawColumns(['category_name','show_photo','action'])->make(true);
+            ->rawColumns(['category_name','action'])->make(true);
 
     }
 }

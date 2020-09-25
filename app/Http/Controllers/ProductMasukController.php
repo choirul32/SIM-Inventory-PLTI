@@ -25,9 +25,9 @@ class ProductMasukController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('nama','ASC')
+        $products = Product::orderBy('spesifikasi','ASC')
             ->get()
-            ->pluck('nama','id');
+            ->pluck('spesifikasi','id');
 
         $suppliers = Supplier::orderBy('nama','ASC')
             ->get()
@@ -149,8 +149,8 @@ class ProductMasukController extends Controller
         $product = Product_Masuk::all();
 
         return Datatables::of($product)
-            ->addColumn('products_name', function ($product){
-                return $product->product->nama;
+            ->addColumn('spesifikasi', function ($product){
+                return $product->product->spesifikasi;
             })
             ->addColumn('supplier_name', function ($product){
                 return $product->supplier->nama;
@@ -162,7 +162,7 @@ class ProductMasukController extends Controller
 
 
             })
-            ->rawColumns(['products_name','supplier_name','action'])->make(true);
+            ->rawColumns(['spesifikasi','supplier_name','action'])->make(true);
 
     }
 

@@ -10,11 +10,11 @@
     <div class="box">
 
         <div class="box-header">
-            <h3 class="box-title">Data Suppliers</h3>
+            <h3 class="box-title">Data Vendor</h3>
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Add Suppliers</a>
+            <a onclick="addForm()" class="btn btn-primary" >Add Vendor</a>
             <a href="{{ route('exportPDF.suppliersAll') }}" class="btn btn-danger">Export PDF</a>
             <a href="{{ route('exportExcel.suppliersAll') }}" class="btn btn-success">Export Excel</a>
         </div>
@@ -39,7 +39,7 @@
         <!-- /.box-body -->
     </div>
 
-    @include('suppliers.form_import')
+    {{-- @include('suppliers.form_import') --}}
 
     @include('suppliers.form')
 
@@ -53,20 +53,6 @@
 
     {{-- Validator --}}
     <script src="{{ asset('assets/validator/validator.min.js') }}"></script>
-
-    {{--<script>--}}
-    {{--$(function () {--}}
-    {{--$('#items-table').DataTable()--}}
-    {{--$('#example2').DataTable({--}}
-    {{--'paging'      : true,--}}
-    {{--'lengthChange': false,--}}
-    {{--'searching'   : false,--}}
-    {{--'ordering'    : true,--}}
-    {{--'info'        : true,--}}
-    {{--'autoWidth'   : false--}}
-    {{--})--}}
-    {{--})--}}
-    {{--</script>--}}
 
     <script type="text/javascript">
         var table = $('#sales-table').DataTable({

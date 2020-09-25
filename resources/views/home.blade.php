@@ -50,39 +50,7 @@
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-black-custom">
-            <div class="inner">
-                <h3>{{ \App\Customer::count() }}</h3>
-                <p>Customer</p>
-            </div>
-            <div class="icon">
-                <i class="fa fa-users"></i>
-            </div>
-            <a href="{{ route('customers.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-    <!-- ./col -->
-</div>
-
-
-
-<div class="row" style="color: white">
-    <div class="col-lg-3 col-xs-6" >
-        <!-- small box -->
-        <div class="small-box bg-black-custom">
-            <div class="inner">
-                <h3>{{ \App\Sale::count() }}</h3>
-
-                <p>Sales</p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-bag"></i>
-            </div>
-            <a href="{{ route('sales.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
+    
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
@@ -90,7 +58,7 @@
             <div class="inner">
                 <h3>{{ \App\Supplier::count() }}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Supplier</p>
+                <p>Vendor</p>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -98,6 +66,13 @@
             <a href="{{ route('suppliers.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
+</div>
+
+
+
+<div class="row" style="color: white">
+    
+    
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
@@ -130,6 +105,42 @@
     </div>
     <!-- ./col -->
     <div id="container" class=" col-xs-6"></div>
+</div>
+
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Product Keluar Paling Banyak</h3>
+    </div>
+
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="products-table" class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Spesifikasi</th>
+                <th>Kategori Barang</th>
+                <th>Jumlah Barang</th>
+                <th>Spesifikasi</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach ($p_keluar as $item)
+                <tr>
+                    <th>{{ $item->product_id }}</th>
+                    <th>{{ $item->lokasi }}</th>
+                    <th>{{ $item->qty }}</th>
+                    <th>{{ $item->tanggal }}</th>
+                    <th>Spesifikasi</th>
+                    <th></th>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <!-- /.box-body -->
 </div>
 
 @endsection
