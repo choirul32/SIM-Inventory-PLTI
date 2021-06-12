@@ -1,2 +1,2 @@
-# laravel-inventory-PLTI
- web monitoring inventory PLTI
+# Laravel-PLTI
+Web Monitoring Inventory 
