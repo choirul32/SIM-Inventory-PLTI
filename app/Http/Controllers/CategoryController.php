@@ -48,7 +48,8 @@ class CategoryController extends Controller
         ]);
 
         Category::create($request->all());
-
+        
+        activity()->causedBy($user)->log('Membuat Kategory Barang Baru');
         return response()->json([
            'success'    => true,
            'message'    => 'Categories Created'
@@ -75,6 +76,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
+        
         return $category;
     }
 
@@ -95,6 +97,7 @@ class CategoryController extends Controller
 
         $category->update($request->all());
 
+        activity()->causedBy($user)->log('Mengedit Kategory Barang');
         return response()->json([
             'success'    => true,
             'message'    => 'Categories Update'
@@ -111,6 +114,7 @@ class CategoryController extends Controller
     {
         Category::destroy($id);
 
+        activity()->causedBy($user)->log('Menghapus Kategory Barang');
         return response()->json([
             'success'    => true,
             'message'    => 'Categories Delete'

@@ -59,7 +59,7 @@ class ProductController extends Controller
         ]);
 
         Product::create($request->all());
-
+        activity()->causedBy($user)->log('Membuat Barang Baru');
         return response()->json([
             'success' => true,
             'message' => 'Products Created'
@@ -116,19 +116,8 @@ class ProductController extends Controller
 
         $input = $request->all();
         $produk = Product::findOrFail($id);
-
-        $input['image'] = $produk->image;
-
-        if ($request->hasFile('image')){
-            if (!$produk->image == NULL){
-                unlink(public_path($produk->image));
-            }
-            $input['image'] = '/upload/products/'.str_slug($input['nama'], '-').'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('/upload/products/'), $input['image']);
-        }
-
         $produk->update($input);
-
+        activity()->causedBy($user)->log('Mengedit Barang');
         return response()->json([
             'success' => true,
             'message' => 'Products Update'
@@ -150,7 +139,7 @@ class ProductController extends Controller
         }
 
         Product::destroy($id);
-
+        activity()->causedBy($user)->log('Menghapus Barang');
         return response()->json([
             'success' => true,
             'message' => 'Products Deleted'

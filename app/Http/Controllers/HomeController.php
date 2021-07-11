@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Product_Keluar;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
 
 class HomeController extends Controller
 {
@@ -34,10 +35,8 @@ class HomeController extends Controller
         ->orderBy('qty_keluar', 'desc')
         ->take(5)
         ->get();
-
-        
-
-        dd($p_keluar);
+        $test = Activity::all();
+        dd($test);
         return view('home', compact('p_keluar'));
     }
 }

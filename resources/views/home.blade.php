@@ -106,42 +106,73 @@
     <!-- ./col -->
     <div id="container" class=" col-xs-6"></div>
 </div>
-
-
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title">Product Keluar Paling Banyak</h3>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box">
+    
+            <div class="box-header">
+                <h3 class="box-title">Product Keluar Paling Banyak</h3>
+            </div>
+        
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table id="products-table" class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Spesifikasi</th>
+                        <th>Kategori Barang</th>
+                        <th>Jumlah Barang</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($p_keluar as $item)
+                        <tr>
+                            <th>{{ $loop->iteration }}</th>
+                            <th>{{ $item->spesifikasi }}</th>
+                            <th>{{ $item->product_id }}</th>
+                            <th>{{ $item->qty_keluar }}</th>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
     </div>
-
-    <!-- /.box-header -->
-    <div class="box-body">
-        <table id="products-table" class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Spesifikasi</th>
-                <th>Kategori Barang</th>
-                <th>Jumlah Barang</th>
-                <th>Spesifikasi</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-                @foreach ($p_keluar as $item)
-                <tr>
-                    <th>{{ $item->product_id }}</th>
-                    <th>{{ $item->lokasi }}</th>
-                    <th>{{ $item->qty }}</th>
-                    <th>{{ $item->tanggal }}</th>
-                    <th>Spesifikasi</th>
-                    <th></th>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+    <div class="col-lg-6">
+        <div class="box">
+    
+            <div class="box-header">
+                <h3 class="box-title">History Kegiatan Terakhir</h3>
+            </div>
+        
+            <!-- /.box-header -->
+            <div class="box-body">
+                <table id="products-table" class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>User</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($p_keluar as $item)
+                        <tr>
+                            <th>{{ $loop->iteration }}</th>
+                            <th>{{ $item->spesifikasi }}</th>
+                            <th>{{ $item->product_id }}</th>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
     </div>
-    <!-- /.box-body -->
 </div>
+
 
 @endsection
 
